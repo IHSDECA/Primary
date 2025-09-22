@@ -1,0 +1,51 @@
+{
+  "clubName": "Issaquah High School DECA",
+  "tagline": "Emerging Leaders & Entrepreneurs",
+  "schoolYear": "2025\u20132026",
+  "advisors": [
+    {
+      "name": "Mrs. Rivera",
+      "email": "rivera@school.edu",
+      "room": "210"
+    },
+    {
+      "name": "Mr. Singh",
+      "email": "singh@school.edu",
+      "room": "212"
+    }
+  ],
+  "officers": [
+    {
+      "name": "Alex Kim",
+      "role": "President",
+      "email": "alex.kim@school.edu"
+    },
+    {
+      "name": "Priya Shah",
+      "role": "VP Competitions",
+      "email": "priya.shah@school.edu"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Who can join?",
+      "a": "Any student enrolled at Issaquah High can join \u2014 no business class required."
+    }
+  ],
+  "social": [
+    {
+      "label": "IHS DECA Instagram",
+      "href": "#"
+    }
+  ],
+  "hero": {
+    "ctaPrimary": {
+      "label": "Join DECA",
+      "href": "#"
+    },
+    "ctaSecondary": {
+      "label": "Competition Guide",
+      "href": "#calendar-sec"
+    }
+  }
+}
