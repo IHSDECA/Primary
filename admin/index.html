@@ -1,28 +1,84 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>IHS DECA Admin</title>
-    <meta name="robots" content="noindex" />
+backend:
+  name: github
+  repo: IHSDECA/Primary     # <owner>/<repo>
+  branch: main              # make sure your repo's default branch is main
 
-    <!-- Load after DOM so CMS can attach safely -->
-    <script defer src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+# Where uploaded images/files are stored in the repo
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
 
-    <style>
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 24px; }
-      .fallback { max-width: 520px; margin: 10vh auto; text-align: center; color: #334155; }
-      .btn { display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid #cbd5e1; cursor:pointer; }
-    </style>
-  </head>
-  <body>
-    <div class="fallback">
-      <h1>IHS DECA Admin</h1>
-      <p>If you do not see the editor, click Log in.</p>
-      <button id="loginBtn" class="btn">Log in</button>
-    </div>
+# Optional: enables drafts + “Publish” flow in the CMS UI
+publish_mode: editorial_workflow
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const btn = document.getElementById('loginBtn');
-        if (btn) btn.addEventListener('click', () =>
+# Optional niceties (safe to keep)
+slug:
+  encoding: unicode
+  clean_accents: true
+  sanitize_replacement: "-"
+
+# Optional: nicer commit messages
+commit_messages:
+  create: "CMS: create {{collection}} “{{slug}}”"
+  update: "CMS: update {{collection}} “{{slug}}”"
+  delete: "CMS: delete {{collection}} “{{slug}}”"
+  uploadMedia: "CMS: upload “{{path}}”"
+  deleteMedia: "CMS: delete “{{path}}”"
+
+collections:
+  - name: "site"
+    label: "Site Content"
+    files:
+      - name: "main"
+        label: "Main Content"
+        file: "content/site.json"
+        fields:
+          - { name: clubName, label: Club Name, widget: string, default: "Issaquah High School DECA" }
+          - { name: tagline, label: Tagline, widget: string, default: "Emerging Leaders & Entrepreneurs" }
+          - { name: schoolYear, label: School Year, widget: string, default: "2025–2026" }
+
+          - name: advisors
+            label: Advisors
+            widget: list
+            fields:
+              - { name: name,  label: Name,  widget: string }
+              - { name: email, label: Email, widget: string, required: false }
+              - { name: room,  label: Room,  widget: string, required: false }
+
+          - name: officers
+            label: Officers
+            widget: list
+            fields:
+              - { name: name,  label: Name,  widget: string }
+              - { name: role,  label: Role,  widget: string }
+              - { name: email, label: Email, widget: string, required: false }
+
+          - name: faq
+            label: FAQ
+            widget: list
+            fields:
+              - { name: q, label: Question, widget: string }
+              - { name: a, label: Answer,   widget: text }
+
+          - name: social
+            label: Social Links
+            widget: list
+            fields:
+              - { name: label, label: Label, widget: string }
+              - { name: href,  label: URL,   widget: string }
+
+          - name: hero
+            label: Hero Buttons
+            widget: object
+            fields:
+              - name: ctaPrimary
+                label: Primary Button
+                widget: object
+                fields:
+                  - { name: label, label: Label, widget: string, default: "Join DECA" }
+                  - { name: href,  label: Link,  widget: string, default: "#" }
+              - name: ctaSecondary
+                label: Secondary Button
+                widget: object
+                fields:
+                  - { name: label, label: Label, widget: string, default: "Competition Guide" }
+                  - { name: href,  label: Link,  widget: string, default: "#calendar-sec" }
