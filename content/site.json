@@ -1,0 +1,22 @@
+{
+  "clubName": "Issaquah High School DECA",
+  "tagline": "Emerging Leaders & Entrepreneurs",
+  "schoolYear": "2025\u20132026",
+  "advisors": [
+    {
+      "name": "(Add an advisor here)"
+    }
+  ],
+  "officers": [
+    {
+      "name": "(Add an officer here)",
+      "role": "President"
+    }
+  ],
+  "social": [
+    {
+      "label": "IHS DECA Instagram",
+      "href": "#"
+    }
+  ]
+}
