@@ -4,15 +4,14 @@
   "schoolYear": "2025\u20132026",
   "advisors": [
     {
-      "name": "Andrew Shanafelt"
-      "name": "Joseph Hua"
+      "name": "Andrew Shanafelt",
+      "name": "Joseph Hua",
       "name": "Cheryl Furey"
     }
   ],
   "officers": [
     {
-      "name": "(Ava Datta)",
-      "role": "President"
+      "name": "Ava Datta", "role": "President"
     }
   ],
   "social": [
